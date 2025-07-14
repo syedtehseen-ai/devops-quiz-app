@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Quiz Generator</title>
+    <style>
+        body { font-family: Arial; background: #f8f8f8; padding: 20px; }
+        h1 { color: #333; }
+        select, button { padding: 8px; font-size: 16px; }
+        .question-box { background: white; padding: 15px; margin-top: 20px; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Generate DevOps Interview Questions</h1>
+    <form method="post" action="/get-questions">
+        <label for="topic">Select Topic:</label>
+        <select name="topic" id="topic">
+            <option value="AWS">AWS</option>
+            <option value="Kubernetes">Kubernetes</option>
+            <option value="Linux">Linux</option>
+            <option value="Terraform">Terraform</option>
+            <option value="CI/CD">CI/CD</option>
+        </select>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if questions %}
+    <div class="question-box">
+        <h3>Questions on {{ topic }}</h3>
+        <ul>
+            {% for q in questions %}
+            <li>{{ q }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>

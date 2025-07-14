@@ -1,3 +1,5 @@
 # devops-quiz-app
 
-to test locally, create .env file in the root directory ##OPENAI_API_KEY=<##OPENAI_API_KEY##>
+In this, I am using local LLMs Ollama with light weight language model mistral.
+
+It gives a basic html page with topic drop down to select the interview questions based on the topic
