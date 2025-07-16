@@ -15,7 +15,7 @@ def get_questions(request: Request, topic: str = Form(...)):
     prompt = f"Generate 5 DevOps interview questions on the topic: {topic}. Respond only as a numbered list."
 
     response = requests.post(
-        "http://localhost:11434/api/generate",
+        "http://host.docker.internal:11434/api/generate",
         json={
             "model": "mistral",  # or llama3, mistral
             "prompt": prompt,
