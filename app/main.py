@@ -8,7 +8,8 @@ templates = Jinja2Templates(directory="app/templates")
 
 @app.get("/", response_class=HTMLResponse)
 def form_page(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    #return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request, index.html)
 
 @app.post("/get-questions", response_class=HTMLResponse)
 def get_questions(request: Request, topic: str = Form(...)):
