@@ -6,3 +6,4 @@ requests
 jinja2
 requests
 python-multipart
+pytest
