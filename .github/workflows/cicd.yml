@@ -18,7 +18,9 @@ jobs:
         run: |
           pip install -r requirements.txt
       - name: test App (optional)
-        run: pytest
+        run: |
+          export PYTHONPATH=$(pwd)
+          pytest
       - name: Log in to DockerHub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       - name: Build Docker Image
