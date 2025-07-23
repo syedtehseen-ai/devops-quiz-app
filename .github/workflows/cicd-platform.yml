@@ -36,10 +36,11 @@ jobs:
         working-directory: infra
 
       - name: Terraform Plan
-        run: terraform plan -out=tfplan
+        run: terraform plan -out=tfplan -var="image_tag=${{ github.sha }}"
         working-directory: infra
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/feature/doqa-tf-k8s-cicd'
-        run: terraform apply -auto-approve tfplan -var="image_tag=${{ github.sha }}"
+        run: terraform apply -auto-approve tfplan
         working-directory: infra
+
