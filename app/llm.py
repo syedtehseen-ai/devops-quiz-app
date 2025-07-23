@@ -15,12 +15,12 @@ def query_groq_llm(topic):
 
     # Build the message list based on topic
     messages = []
-    if topic.lower() == "social":
+    if topic.lower() == "Social":
         messages.append({
             "role": "user",
             "content": f"Generate 5 Questions from Primary Social Studies - Class 3 ICSE BOARD by Frank Bros & Co on the topic: {topic}. Respond only as a numbered list."
         })
-    elif topic.lower() == "computer":
+    elif topic.lower() == "Computer":
         messages.append({
             "role": "user",
             "content": f"Generate 5 Questions from Mastering Essential Computer Skills - Class 3 ICSE BOARD by TRACKPAD iPro Ver. 4.1 on the topic: {topic}. Respond only as a numbered list."
