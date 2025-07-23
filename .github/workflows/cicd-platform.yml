@@ -3,7 +3,7 @@ name: Platform Infra Provisioning
 on:
   push:
     branches:
-      - feature/doqa-tf-k8s-cicd  # Optional: restrict to specific branch ....
+      - feature/doqa-tf-k8s-cicd  # Optional: restrict to branch ....
     paths:
       - 'infra/**'
       - '**.tf'
