@@ -29,7 +29,7 @@ resource "kubernetes_deployment" "quiz_app" {
 
       spec {
         container {
-          image = "tehseen45/devops_quiz_app:latest" 
+          image = "tehseen45/devops_quiz_app:${var.image_tag}" 
           name  = "quiz-app-container"
 
           port {
