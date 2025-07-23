@@ -3,7 +3,7 @@ resource "kubernetes_namespace" "devops" {
     name = "devops"
   }
 }
-# Deployment quiz app
+# Deployment quiz app ##
 
 resource "kubernetes_deployment" "quiz_app" {
   metadata {
