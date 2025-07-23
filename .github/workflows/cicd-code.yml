@@ -33,12 +33,5 @@ jobs:
       - name: Tag Docker Image
         run: docker tag ${{ secrets.DOCKER_USERNAME }}/devops_quiz_app:latest ${{ secrets.DOCKER_USERNAME }}/devops_quiz_app:${{ github.sha }}
 
-      # - name: Run FastAPI app (in background)
-      #   run: |
-      #     uvicorn app.main:app --host 0.0.0.0 --port 8000 &
-      #     sleep 5  # give it time to start
-      # - name: Test endpoint
-      #   run: |
-      #     curl --fail http://localhost:8000 || (echo "App failed to start" && exit 1)
       - name: Push Docker Image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/devops_quiz_app:latest  
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/devops_quiz_app:${{ github.sha }}
