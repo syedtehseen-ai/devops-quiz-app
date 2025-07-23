@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="app/templates")
 def form_page(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.post("/generate", response_class=HTMLResponse)
+@app.post("/get-questions", response_class=HTMLResponse)
 def generate(request: Request, topic: str = Form(...)):
     llm_response = query_groq_llm(topic)
     content = llm_response["choices"][0]["message"]["content"]

@@ -12,11 +12,28 @@ def query_groq_llm(topic):
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
+
+    # Build the message list based on topic
+    messages = []
+    if topic.lower() == "social":
+        messages.append({
+            "role": "user",
+            "content": f"Generate 5 Questions from Primary Social Studies - Class 3 ICSE BOARD by Frank Bros & Co on the topic: {topic}. Respond only as a numbered list."
+        })
+    elif topic.lower() == "computer":
+        messages.append({
+            "role": "user",
+            "content": f"Generate 5 Questions from Mastering Essential Computer Skills - Class 3 ICSE BOARD by TRACKPAD iPro Ver. 4.1 on the topic: {topic}. Respond only as a numbered list."
+        })
+    else:
+        messages.append({
+            "role": "user",
+            "content": f"Generate 5 DevOps interview questions on the topic: {topic}. Respond only as a numbered list."
+        })
+
     payload = {
-        "model": "gemma-7b-it",  # fast, lightweight
-        "messages": [
-            {"role": "user", "content": f"Generate 5 DevOps interview questions on {topic}"}
-        ],
+        "model": "gemma-7b-it",
+        "messages": messages,
         "temperature": 0.7
     }
 
