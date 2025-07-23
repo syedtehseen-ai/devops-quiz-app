@@ -13,7 +13,7 @@ def query_groq_llm(topic):
         "Content-Type": "application/json"
     }
 
-    # Build the message list based on topic
+    # Build the message list based on topics
     messages = []
     if topic.lower() == "social":
         messages.append({
