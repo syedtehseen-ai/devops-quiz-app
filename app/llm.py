@@ -24,7 +24,7 @@ def query_groq_llm(topic: str):
     elif topic_lower == "computer":
         prompt = "Generate 5 Questions from Mastering Essential Computer Skills - Class 3 ICSE BOARD by TRACKPAD iPro Ver. 4.1 on the topic: Computer. Respond only as a numbered list."
     elif topic_lower == "Hindi":
-        prompt = "Generate 5 Questions from Hindi Grammar - Class 3 ICSE BOARD. first 3 chapters."
+        prompt = "Generate 5 Questions from Hindi Grammar - Class 3 ICSE BOARD. first 3 chapters. Respond only as a numbered list."
     else:
         prompt = f"Generate 5 DevOps interview questions on the topic: {topic}. Respond only as a numbered list."
 
