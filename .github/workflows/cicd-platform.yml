@@ -8,7 +8,9 @@ on:
       - 'infra/**'
       - '**.tf'
       - '**.tfvars'
-
+env:
+  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+  
 jobs:
   terraform:
     runs-on: ubuntu-latest
